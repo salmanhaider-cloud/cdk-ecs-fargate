@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My ECS Fargate App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: white;
+      text-align: center;
+      padding-top: 100px;
+    }
+    h1 {
+      font-size: 3rem;
+      color: #38bdf8;
+    }
+    p {
+      font-size: 1.5rem;
+      color: #facc15;
+    }
+  </style>
+</head>
+<body>
+  <h1>🚀 Deployed on ECS Fargate via CDK + GitHub Actions</h1>
+  <p>CloudFront ➝ ALB ➝ ECS (Nginx)</p>
+</body>
+</html>

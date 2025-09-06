@@ -23,7 +23,7 @@ export class CdkEcsFargateStack extends cdk.Stack {
       memoryLimitMiB: 512,
       publicLoadBalancer: true,
       taskImageOptions: {
-        image: ecs.ContainerImage.fromRegistry("nginx"), // ✅ Public image
+        image: ecs.ContainerImage.fromAsset("./"), // ✅ Public image
         containerPort: 80,
       },
     });
