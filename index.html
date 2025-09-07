@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Engineer Salman | Cloud Project</title>
+  <title>Engineer Salman | Cloud & DevOps Portfolio</title>
   <style>
     * {
       margin: 0;
@@ -22,11 +22,12 @@
       position: fixed;
       top: 0;
       width: 100%;
-      background: rgba(0, 0, 0, 0.7);
+      background: rgba(0, 0, 0, 0.8);
       display: flex;
       justify-content: center;
-      padding: 15px;
+      padding: 15px 0;
       z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.5);
     }
 
     header nav a {
@@ -34,34 +35,35 @@
       color: white;
       text-decoration: none;
       font-size: 1.2rem;
-      transition: color 0.3s;
+      transition: color 0.3s, transform 0.3s;
     }
 
     header nav a:hover {
       color: #00d4ff;
+      transform: scale(1.1);
     }
 
     section {
-      height: 100vh;
+      min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding: 20px;
+      padding: 60px 20px 40px 20px;
+      position: relative;
     }
 
-    /* Backgrounds */
+    /* Home Section */
     #home {
-      background: url('https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
+      background: url('https://images.unsplash.com/photo-1581090700227-9ff2872f1ed6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
       background-size: cover;
-      position: relative;
     }
 
     #home::before {
       content: "";
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
-      background-color: rgba(0, 0, 0, 0.6);
+      background-color: rgba(0, 0, 0, 0.7);
     }
 
     #home .content {
@@ -71,24 +73,20 @@
     }
 
     @keyframes fadeInDown {
-      from {
-        opacity: 0;
-        transform: translateY(-50px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(-50px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     h1 {
       font-size: 4rem;
       margin-bottom: 20px;
+      text-shadow: 2px 2px 8px #000;
     }
 
     p {
       font-size: 1.5rem;
       margin-bottom: 20px;
+      text-shadow: 1px 1px 6px #000;
     }
 
     .btn {
@@ -111,50 +109,96 @@
     /* About Section */
     #about {
       background: #111;
+      padding-top: 80px;
     }
 
     #about h2 {
       font-size: 3rem;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
       animation: fadeIn 2s;
+      color: #00d4ff;
     }
 
     #about p {
       font-size: 1.2rem;
-      max-width: 600px;
-      line-height: 1.6;
+      max-width: 700px;
+      line-height: 1.8;
+      margin: auto;
       animation: fadeIn 3s;
     }
 
     /* Projects Section */
     #projects {
-      background: #222;
+      background: #1a1a1a;
+      padding-top: 80px;
     }
 
     #projects h2 {
       font-size: 3rem;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
+      color: #00d4ff;
+    }
+
+    .projects-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
     }
 
     .card {
-      background: #333;
-      border-radius: 10px;
-      padding: 20px;
-      margin: 10px;
-      display: inline-block;
-      width: 250px;
-      transition: transform 0.3s;
+      background: #222;
+      border-radius: 12px;
+      padding: 25px;
+      width: 280px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
     }
 
     .card:hover {
       transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+    }
+
+    .card h3 {
+      margin-bottom: 15px;
+      color: #00d4ff;
+    }
+
+    .card p {
+      font-size: 1rem;
+      line-height: 1.5;
+      color: #ccc;
+    }
+
+    /* Contact Section */
+    #contact {
+      background: #111;
+      padding-top: 80px;
+    }
+
+    #contact h2 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: #00d4ff;
+    }
+
+    #contact p, #contact a {
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+      color: #ccc;
+      text-decoration: none;
+    }
+
+    #contact a:hover {
+      color: #00d4ff;
     }
 
     footer {
       background: #000;
       padding: 20px;
       text-align: center;
-      color: #ccc;
+      color: #777;
     }
 
     @keyframes fadeIn {
@@ -189,8 +233,8 @@
       <h2>About Me</h2>
       <p>
         I am Engineer Salman, passionate about Cloud, DevOps & Automation.
-        Skilled in AWS, Azure, Docker, Kubernetes, and CI/CD pipelines.
-        My goal is to design scalable, reliable, and secure cloud architectures.
+        Skilled in AWS (ECS, Fargate, ECR, CloudFront, ALB), Azure, Docker, Kubernetes, and CI/CD pipelines.
+        I focus on designing scalable, reliable, and secure cloud architectures.
       </p>
     </div>
   </section>
@@ -198,10 +242,25 @@
   <!-- Projects Section -->
   <section id="projects">
     <div>
-      <h2>My Projects</h2>
-      <div class="card">🌐 AWS ECS Fargate Deployment</div>
-      <div class="card">⚡ CI/CD Pipeline with GitHub Actions</div>
-      <div class="card">☁️ Azure VM Automation</div>
+      <h2>My Cloud Projects</h2>
+      <div class="projects-container">
+        <div class="card">
+          <h3>🌐 AWS ECS Fargate Deployment</h3>
+          <p>Deploy containerized apps using ECS + Fargate with Application Load Balancer and CloudFront integration.</p>
+        </div>
+        <div class="card">
+          <h3>⚡ CI/CD Pipeline</h3>
+          <p>Automated builds and deployment with GitHub Actions, including Docker image push to ECR.</p>
+        </div>
+        <div class="card">
+          <h3>☁️ Azure VM Automation</h3>
+          <p>Infrastructure automation using PowerShell scripts and ARM templates on Azure virtual machines.</p>
+        </div>
+        <div class="card">
+          <h3>🔧 DevOps Tools</h3>
+          <p>Hands-on experience with Docker, Kubernetes, Terraform, Ansible, and monitoring tools.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -209,7 +268,7 @@
   <section id="contact">
     <div>
       <h2>Contact Me</h2>
-      <p>Email: <a href="mailto:salmanhaider@example.com" style="color:#00d4ff">salmanhaider@example.com</a></p>
+      <p>Email: <a href="mailto:salmanhaider@example.com">salmanhaider@example.com</a></p>
       <a href="https://github.com/salmanhaider-cloud" target="_blank" class="btn">GitHub Profile</a>
     </div>
   </section>
