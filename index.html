@@ -3,279 +3,107 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Engineer Salman | Cloud & DevOps Portfolio</title>
+  <title>Cloud & DevOps Project | Engineer Salman</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
     body {
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      color: white;
-      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+      background: #111;
+      color: #fff;
+      line-height: 1.6;
     }
 
     header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.8);
-      display: flex;
-      justify-content: center;
-      padding: 15px 0;
-      z-index: 1000;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+      background: #222;
+      padding: 30px 20px;
+      text-align: center;
+      border-bottom: 2px solid #00d4ff;
     }
 
-    header nav a {
-      margin: 0 20px;
-      color: white;
-      text-decoration: none;
-      font-size: 1.2rem;
-      transition: color 0.3s, transform 0.3s;
-    }
-
-    header nav a:hover {
-      color: #00d4ff;
-      transform: scale(1.1);
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
     }
 
     section {
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 60px 20px 40px 20px;
-      position: relative;
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 0 20px;
     }
 
-    /* Home Section */
-    #home {
-      background: url('https://images.unsplash.com/photo-1581090700227-9ff2872f1ed6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
-      background-size: cover;
-    }
-
-    #home::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background-color: rgba(0, 0, 0, 0.7);
-    }
-
-    #home .content {
-      position: relative;
-      z-index: 1;
-      animation: fadeInDown 2s;
-    }
-
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-50px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    h1 {
-      font-size: 4rem;
-      margin-bottom: 20px;
-      text-shadow: 2px 2px 8px #000;
+    h2 {
+      color: #00d4ff;
+      margin-bottom: 15px;
+      font-size: 2rem;
     }
 
     p {
-      font-size: 1.5rem;
-      margin-bottom: 20px;
-      text-shadow: 1px 1px 6px #000;
-    }
-
-    .btn {
-      padding: 15px 30px;
-      font-size: 1.2rem;
-      color: white;
-      background: linear-gradient(135deg, #007BFF, #00D4FF);
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      text-decoration: none;
-      transition: 0.3s ease-in-out;
-    }
-
-    .btn:hover {
-      transform: scale(1.05);
-      background: linear-gradient(135deg, #00D4FF, #007BFF);
-    }
-
-    /* About Section */
-    #about {
-      background: #111;
-      padding-top: 80px;
-    }
-
-    #about h2 {
-      font-size: 3rem;
-      margin-bottom: 20px;
-      animation: fadeIn 2s;
-      color: #00d4ff;
-    }
-
-    #about p {
-      font-size: 1.2rem;
-      max-width: 700px;
-      line-height: 1.8;
-      margin: auto;
-      animation: fadeIn 3s;
-    }
-
-    /* Projects Section */
-    #projects {
-      background: #1a1a1a;
-      padding-top: 80px;
-    }
-
-    #projects h2 {
-      font-size: 3rem;
-      margin-bottom: 30px;
-      color: #00d4ff;
-    }
-
-    .projects-container {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    .card {
-      background: #222;
-      border-radius: 12px;
-      padding: 25px;
-      width: 280px;
-      transition: transform 0.3s, box-shadow 0.3s;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-    }
-
-    .card:hover {
-      transform: translateY(-10px) scale(1.05);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.7);
-    }
-
-    .card h3 {
+      font-size: 1.1rem;
       margin-bottom: 15px;
-      color: #00d4ff;
-    }
-
-    .card p {
-      font-size: 1rem;
-      line-height: 1.5;
-      color: #ccc;
-    }
-
-    /* Contact Section */
-    #contact {
-      background: #111;
-      padding-top: 80px;
-    }
-
-    #contact h2 {
-      font-size: 3rem;
-      margin-bottom: 20px;
-      color: #00d4ff;
-    }
-
-    #contact p, #contact a {
-      font-size: 1.2rem;
-      margin-bottom: 15px;
-      color: #ccc;
-      text-decoration: none;
-    }
-
-    #contact a:hover {
-      color: #00d4ff;
     }
 
     footer {
-      background: #000;
-      padding: 20px;
       text-align: center;
-      color: #777;
+      padding: 30px 20px;
+      background: #222;
+      color: #ccc;
+      border-top: 2px solid #00d4ff;
+      margin-top: 50px;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+    a {
+      color: #00d4ff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <!-- Navbar -->
+
   <header>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <h1>Cloud & DevOps Project</h1>
   </header>
 
-  <!-- Home Section -->
-  <section id="home">
-    <div class="content">
-      <h1>🚀 Engineer Salman</h1>
-      <p>Cloud & DevOps Projects Deployed on AWS ECS Fargate</p>
-      <a href="#projects" class="btn">View My Projects</a>
-    </div>
+  <section>
+    <h2>Project Overview</h2>
+    <p>
+      This project demonstrates a fully automated cloud deployment using AWS and DevOps practices. 
+      It includes a containerized application deployed on AWS ECS Fargate with an Application Load Balancer and CloudFront distribution for global access.
+    </p>
+
+    <h2>Technologies & Services Used</h2>
+    <p>
+      - AWS ECS Fargate (for container orchestration)<br>
+      - Amazon ECR (Elastic Container Registry to store Docker images)<br>
+      - AWS CloudFront (Content Delivery Network for fast access)<br>
+      - Application Load Balancer (to route traffic)<br>
+      - GitHub Actions (CI/CD pipeline to automate deployment)<br>
+      - Docker (containerization of the application)<br>
+      - AWS CDK (Infrastructure as Code to deploy resources)
+    </p>
+
+    <h2>Step by Step Flow</h2>
+    <p>
+      Code is pushed to GitHub → GitHub Actions workflow triggers → Docker image is built and pushed to ECR → ECS Fargate runs the container → ALB routes traffic → CloudFront distributes globally → Users can access the app quickly and securely.
+    </p>
+
+    <h2>Benefits</h2>
+    <p>
+      - Fully automated deployment reduces manual effort.<br>
+      - Global fast access through CloudFront.<br>
+      - Scalable and reliable cloud infrastructure.<br>
+      - Demonstrates professional cloud & DevOps skills.<br>
+      - Secure and repeatable infrastructure using code.
+    </p>
   </section>
 
-  <!-- About Section -->
-  <section id="about">
-    <div>
-      <h2>About Me</h2>
-      <p>
-        I am Engineer Salman, passionate about Cloud, DevOps & Automation.
-        Skilled in AWS (ECS, Fargate, ECR, CloudFront, ALB), Azure, Docker, Kubernetes, and CI/CD pipelines.
-        I focus on designing scalable, reliable, and secure cloud architectures.
-      </p>
-    </div>
-  </section>
-
-  <!-- Projects Section -->
-  <section id="projects">
-    <div>
-      <h2>My Cloud Projects</h2>
-      <div class="projects-container">
-        <div class="card">
-          <h3>🌐 AWS ECS Fargate Deployment</h3>
-          <p>Deploy containerized apps using ECS + Fargate with Application Load Balancer and CloudFront integration.</p>
-        </div>
-        <div class="card">
-          <h3>⚡ CI/CD Pipeline</h3>
-          <p>Automated builds and deployment with GitHub Actions, including Docker image push to ECR.</p>
-        </div>
-        <div class="card">
-          <h3>☁️ Azure VM Automation</h3>
-          <p>Infrastructure automation using PowerShell scripts and ARM templates on Azure virtual machines.</p>
-        </div>
-        <div class="card">
-          <h3>🔧 DevOps Tools</h3>
-          <p>Hands-on experience with Docker, Kubernetes, Terraform, Ansible, and monitoring tools.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact">
-    <div>
-      <h2>Contact Me</h2>
-      <p>Email: <a href="mailto:salmanhaider@example.com">salmanhaider@example.com</a></p>
-      <a href="https://github.com/salmanhaider-cloud" target="_blank" class="btn">GitHub Profile</a>
-    </div>
-  </section>
-
-  <!-- Footer -->
   <footer>
-    © 2025 Engineer Salman | All Rights Reserved
+    © 2025 Engineer Salman
   </footer>
+
 </body>
 </html>
