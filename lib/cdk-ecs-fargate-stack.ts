@@ -4,6 +4,7 @@ import * as ec2 from 'aws-cdk-lib/aws-ec2';
 import * as ecs_patterns from 'aws-cdk-lib/aws-ecs-patterns';
 import * as cloudfront from 'aws-cdk-lib/aws-cloudfront';
 import * as origins from 'aws-cdk-lib/aws-cloudfront-origins';
+import * as path from 'path'; // ✅ Add path import
 
 export class CdkEcsFargateStack extends cdk.Stack {
   constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
@@ -23,7 +24,8 @@ export class CdkEcsFargateStack extends cdk.Stack {
       memoryLimitMiB: 512,
       publicLoadBalancer: true,
       taskImageOptions: {
-        image: ecs.ContainerImage.fromAsset("./"), // ✅ Public image
+        // ✅ Use absolute path so GitHub Actions always finds Dockerfile
+        image: ecs.ContainerImage.fromAsset(path.resolve(__dirname, '..')), 
         containerPort: 80,
       },
     });
