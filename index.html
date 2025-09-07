@@ -1,65 +1,222 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Engineer Salman - My Fargate App</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Engineer Salman | Cloud Project</title>
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #007bff, #00c6ff);
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       color: white;
-      text-align: center;
-      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.7);
       display: flex;
-      flex-direction: column;
       justify-content: center;
+      padding: 15px;
+      z-index: 1000;
     }
-    .hero {
-      padding: 60px 20px;
-    }
-    .hero h1 {
-      font-size: 3.5rem;
-      font-weight: bold;
-    }
-    .hero h2 {
-      font-size: 2rem;
-      margin-top: 15px;
-      font-weight: 600;
-      color: #ffe600;
-      text-shadow: 2px 2px #0056b3;
-    }
-    .btn-custom {
-      background-color: white;
-      color: #007bff;
-      font-weight: bold;
-      border-radius: 25px;
-      padding: 12px 24px;
+
+    header nav a {
+      margin: 0 20px;
+      color: white;
       text-decoration: none;
-      transition: 0.3s;
+      font-size: 1.2rem;
+      transition: color 0.3s;
     }
-    .btn-custom:hover {
-      background-color: #f1f1f1;
-      color: #0056b3;
+
+    header nav a:hover {
+      color: #00d4ff;
     }
-    footer {
-      margin-top: auto;
+
+    section {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
       padding: 20px;
-      background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Backgrounds */
+    #home {
+      background: url('https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+    }
+
+    #home::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    #home .content {
+      position: relative;
+      z-index: 1;
+      animation: fadeInDown 2s;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h1 {
+      font-size: 4rem;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      color: white;
+      background: linear-gradient(135deg, #007BFF, #00D4FF);
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: 0.3s ease-in-out;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      background: linear-gradient(135deg, #00D4FF, #007BFF);
+    }
+
+    /* About Section */
+    #about {
+      background: #111;
+    }
+
+    #about h2 {
+      font-size: 3rem;
+      margin-bottom: 15px;
+      animation: fadeIn 2s;
+    }
+
+    #about p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      line-height: 1.6;
+      animation: fadeIn 3s;
+    }
+
+    /* Projects Section */
+    #projects {
+      background: #222;
+    }
+
+    #projects h2 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .card {
+      background: #333;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 10px;
+      display: inline-block;
+      width: 250px;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px) scale(1.05);
+    }
+
+    footer {
+      background: #000;
+      padding: 20px;
+      text-align: center;
+      color: #ccc;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
   </style>
 </head>
 <body>
-  <div class="hero">
-    <h1>🚀 Welcome to My Fargate App</h1>
-    <h2>By Engineer Salman</h2>
-    <p class="lead">This app is running on <strong>AWS ECS Fargate</strong> with Docker & CDK.</p>
-    <a href="https://aws.amazon.com/ecs/" target="_blank" class="btn-custom">Learn More</a>
-  </div>
+  <!-- Navbar -->
+  <header>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
+  <!-- Home Section -->
+  <section id="home">
+    <div class="content">
+      <h1>🚀 Engineer Salman</h1>
+      <p>Cloud & DevOps Projects Deployed on AWS ECS Fargate</p>
+      <a href="#projects" class="btn">View My Projects</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <div>
+      <h2>About Me</h2>
+      <p>
+        I am Engineer Salman, passionate about Cloud, DevOps & Automation.
+        Skilled in AWS, Azure, Docker, Kubernetes, and CI/CD pipelines.
+        My goal is to design scalable, reliable, and secure cloud architectures.
+      </p>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <div>
+      <h2>My Projects</h2>
+      <div class="card">🌐 AWS ECS Fargate Deployment</div>
+      <div class="card">⚡ CI/CD Pipeline with GitHub Actions</div>
+      <div class="card">☁️ Azure VM Automation</div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div>
+      <h2>Contact Me</h2>
+      <p>Email: <a href="mailto:salmanhaider@example.com" style="color:#00d4ff">salmanhaider@example.com</a></p>
+      <a href="https://github.com/salmanhaider-cloud" target="_blank" class="btn">GitHub Profile</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer>
-    <p>© 2025 Engineer Salman | Deployed with ❤️ on AWS</p>
+    © 2025 Engineer Salman | All Rights Reserved
   </footer>
 </body>
 </html>
